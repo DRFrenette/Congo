@@ -10,7 +10,7 @@
         <td class="list_description">
           <dl>
             <dt><%= link_to product.title, product %></dt>
-            <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
+            <dd><p><%= truncate(strip_tags(product.description), length: 80) %></p></dd>
           </dl>
         </td>
         <td class="list_actions">
