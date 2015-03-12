@@ -1,10 +1,12 @@
 <li>
-  <div class="entry">
-    <%= image_tag(product.image_url) %>
-    <h3><%= link_to product.title, product %></h3>
-    <p><%= sanitize(product.description) %></p>
-    <div class="price_line">
-      <span class="price"><%= number_to_currency(product.price) %></span>
+  <% cache ["entry", Product.latest] do %>
+    <div class="entry">
+      <%= image_tag(product.image_url) %>
+      <h3><%= link_to product.title, product %></h3>
+      <p><%= sanitize(product.description) %></p>
+      <div class="price_line">
+        <span class="price"><%= number_to_currency(product.price) %></span>
+      </div>
     </div>
-  </div>
+  <% end %>
 </li>

@@ -4,6 +4,8 @@
 
 <h1>Your Pragmatic Catalog</h1>
 
+<% cache ["store", Product.latest] do %>
 <ul>
   <%= render @products %>
 </ul>
+<% end %>
