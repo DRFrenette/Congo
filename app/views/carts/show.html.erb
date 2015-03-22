@@ -4,9 +4,10 @@
 
 <h2>Your Pragmatic Cart</h2>
 
-<ul>
-  <%= render @cart.line_items %>
-</ul>
+<table>
+  <%= render @cart.line_items, line_item: @line_item %>
+  <%= render "carts/total_amount", cart: @cart %>
+</table>
 
 <%= button_to "Empty Cart", @cart, method: :delete, 
   data: { confirm: "Are you sure?" } %>
